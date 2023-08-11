@@ -1,3 +1,3 @@
 namespace exeplo1{
-    console.log("PAIA");
+    console.log("Olá Mundo");
 }
