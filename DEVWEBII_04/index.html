@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Aula 04 - Intro Vue.js</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <h1>{{subtitulo}}</h1>
+        <p>2 + 3 = {{soma(2,3)}}</p>
+        <p>Número: {{count}}</p>
+        <button @click="contador">Soma + 1</button>
+        <p v-if="count % 2 == 0">par</p>
+        <p v-else>
+           impar
+        </p>
+    </div>
+</body>
+</html>
+
+<script> 
+    const { createApp } = Vue;
+    createApp({ 
+        data(){
+            return{
+                titulo: "Olá Vue!",
+                subtitulo: "Estou aprendendo Vue!",
+                count: 0
+            }
+        },
+        methods: {
+            soma: (num1, num2) => {
+                return num1 + num2
+            },
+            contador: function(){
+                this.count++
+                
+            }
+        }
+    }).mount('#app')
+</script>
